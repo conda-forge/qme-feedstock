@@ -1,5 +1,5 @@
 {% set name = "qme" %}
-{% set version = "0.0.12" %}
+{% set version = "0.0.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2b8a429084baaffdc7c562e528bf740b2f2114d4d2010da766146c0865e57527
+  sha256: 9dc4ce377f3fef3adc0d5100935f0e13ae17bd96f52439b6def2f4025be5567e
 
 build:
   number: 0
