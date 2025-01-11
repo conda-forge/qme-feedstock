@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 9dc4ce377f3fef3adc0d5100935f0e13ae17bd96f52439b6def2f4025be5567e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - qme=qme.client:main
@@ -19,10 +19,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3
+    - python {{ python_min }}
     - pytest-runner
   run:
-    - python >=3
+    - python >={{ python_min }}
     - sqlalchemy
     - flask
     - flask-restful
@@ -30,6 +30,8 @@ requirements:
     - gevent-websocket
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - qme
     - qme.defaults
